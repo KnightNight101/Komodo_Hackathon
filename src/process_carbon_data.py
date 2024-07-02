@@ -50,6 +50,6 @@ ax2.plot(carbon_df.index, carbon_df['New_asset_load_rolling'], color='green')
 # ax2.plot(carbon_df.index, carbon_df['CarbonIntensity'], color=color)
 
 
-carbon_df.to_csv('carbon_intensity.csv')
+carbon_df.to_csv('../data/carbon_intensity.csv')
 plt.show()
 plt.savefig('../img/carbon_intensity_vs_asset_load.png')
