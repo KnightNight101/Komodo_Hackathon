@@ -60,5 +60,6 @@ ax2.plot(df.index, df['New_asset_load_rolling'], color='green')
 print(df[400:420])
 
 plt.show()
-plt.savefig('../img/load_shifting_data_centre.png')
+plt.savefig('./img/energy_pricing_vs_asset_load.png')
+
 
