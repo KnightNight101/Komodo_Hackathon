@@ -40,6 +40,7 @@ Some of the most common problems Tech Zero companies have told us about are:
 ## Octopus Energy Open API
 ### Links
 [Octopus Energy Open API](https://octopus.energy/blog/agile-smart-home-diy/#AgileAPI)
+
 [Guide to the Octopus Energy Open API - GUYLIPMAN](https://www.guylipman.com/octopus/api_guide.html)
 [Generic API Tool](https://www.guylipman.com/octopus/generic.html)
 ## Breakdown
