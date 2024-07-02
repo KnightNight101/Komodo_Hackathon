@@ -1,19 +1,9 @@
 # Komodo - Hackathon
 
-## Project Spec 
-Initially, this project is a 2 week project, with the possibility of another week depending on outcomes of the hackathon. The project is based on ‘best-effort’ - we do not expect you to commit to a specific number of hours, but we do hope you use the opportunity to show what you can do.
-
-This is a remote-working project (apart from the 2 days at the hackathon itself). 
-If you are unable to attend the hackathon, please let us know so we can prepare for the event appropriately. If you are able to attend, we will pay for travel fares.
-
 ## Project
-We will be working towards an ‘energy flexibility calculator’ in the hackathon. The basic idea is to show how much carbon savings can be made using energy storage assets.
+We will be working towards an ‘energy flexibility calculator’ in the hackathon. The basic idea is to show how much carbon savings can be made using energy storage assets or by shifting job processing at data centres.
 
-The first week (24th-28th March), will be about examining the data and preparing some simple jupyter notebooks (or similar) for us to be able to access and manipulate on the day. We would like you to have a look through the data that has been shared below, and share ideas, insights or interesting things you find - in particular around energy storage, carbon emissions and renewable energy.
 
-The second week will consist of the hackathon Mon-Tues (if you can attend) and then round up and completing any work that has been started during those first two days. 
-
-If there is a third week, it will be building on the work completed either on the backend calculations or in the data visualisations.
 ## Things to Think about
 
 Some of the most common problems Tech Zero companies have told us about are:
@@ -29,13 +19,8 @@ Some of the most common problems Tech Zero companies have told us about are:
 - What is the carbon footprint of using energy at peak times vs a different time of the day?
 - What are the characteristics of energy storage assets (capacity, charging profiles, user expectations etc) that can be tweaked to provide flexibility? 
 - etc.
-
-
-
-
  
 # Data and API breakdown
-
 
 ## Octopus Energy Open API
 ### Links
