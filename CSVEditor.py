@@ -2,22 +2,21 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 
-data = pd.read_csv('output_dataframe.csv') 
-  
+MainData = pd.read_csv('data\output_dataframe.csv') 
+Carbon = pd.read_csv('data\carbon_intensity.csv') 
+
 # display  
-print("Original 'output_dataframe.csv' CSV Data: \n") 
-print(data) 
+print("Original 'output_dataframe.csv' CSV MainData: \n") 
+print(MainData) 
   
 # drop function which is used in removing or deleting rows or columns from the CSV files 
-data.drop('Period from', inplace=True, axis=1) 
-data.drop('Period to', inplace=True, axis=1) 
-data.drop('Price_moving_avg', inplace=True, axis=1) 
-
-
+MainData.drop('Period from', inplace=True, axis=1) 
+MainData.drop('Period to', inplace=True, axis=1) 
+MainData.drop('Price_moving_avg', inplace=True, axis=1) 
   
 # display  
-print("\nCSV Data after deleting the columns :\n") 
-print(data)
+print("\nCSV MainData after deleting the columns :\n") 
+print(MainData)
 
 # Define the start and end date
 start_date = datetime(2024, 6, 2)
@@ -30,11 +29,13 @@ timestamps = [start_date + timedelta(minutes=30*x) for x in range(num_intervals)
 # Convert datetime objects to Unix timestamps
 unix_timestamps = [int(t.timestamp()) for t in timestamps]
 
-data.insert(0, 'unix_timestamp', unix_timestamps[:len(data)])  # Ensure it matches the length of the existing DataFrame
+MainData.insert(0, 'unix_timestamp', unix_timestamps[:len(MainData)])  # Ensure it matches the length of the existing DataFrame
 
-data.to_csv('GrafanaData.csv', index=False)
+# Adding Carbon Intensity
 
+CarbonIntensity = Carbon['CarbonIntensity']
+MainData['Carbon Intensity'] = CarbonIntensity
 
-
+MainData.to_csv('data\GrafanaData.csv', index=False)
 #2024-06-02
 #2024-07-01
