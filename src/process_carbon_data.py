@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-carbon_df = pd.read_csv('carbon_intensity_example_out.csv', parse_dates=['PeriodFrom', 'PeriodTo'], date_parser=lambda x: pd.to_datetime(x, format='%Y-%m-%dT%H:%MZ'))
+carbon_df = pd.read_csv('../data/carbon_intensity_example_out.csv', parse_dates=['PeriodFrom', 'PeriodTo'], date_parser=lambda x: pd.to_datetime(x, format='%Y-%m-%dT%H:%MZ'))
 carbon_df.set_index('PeriodFrom', inplace=True)
 carbon_df['CarbonIntensityRolling'] = carbon_df['CarbonIntensity'].astype(float).rolling(window=100).mean()
 carbon_df['Asset_load'] = 1
@@ -52,4 +52,4 @@ ax2.plot(carbon_df.index, carbon_df['New_asset_load_rolling'], color='green')
 
 carbon_df.to_csv('carbon_intensity.csv')
 plt.show()
-plt.savefig('carbon_intensity_vs_asset_load.png')
+plt.savefig('../img/carbon_intensity_vs_asset_load.png')
