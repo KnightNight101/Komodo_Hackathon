@@ -1,8 +1,12 @@
-# Komodo - Hackathon
-
+=======
 ## Project
 We will be working towards an ‘energy flexibility calculator’ in the hackathon. The basic idea is to show how much carbon savings can be made using energy storage assets or by shifting job processing at data centres.
 
+## Code 
+- `agile-half-hour` data downloaded from the `https://agile.octopushome.net/historical-data` dashboard for East Midlands.
+- Install `pip install -r requirements.txt` dependencies.
+- Run `python process_kraken_data.py` to generate the matplotlib plot and output dataframe
+- This simply compares shifting data centre jobs / charging processes to illustrate the cost savings you can get
 
 ## Things to Think about
 
@@ -41,4 +45,5 @@ Some of the most common problems Tech Zero companies have told us about are:
 - To identify the product code for a particular tariff, you can usually take off the first few letters of the tariff (E-1R-, E-2R- or G-1R) which indicate if it is electricity single register, electricity dual register (eg economy7) or gas single register, and the letter at the end (eg -A) which indicates the region code
 - Electricity is typically measured in kwh (kilowatt hour), which is the amount of electricity you get if you use 1 kilowatt for an hour. 
 - We typically quote the price of electricity in pence/kwh. Wholesale electricity is typcially measured in mwh (megawatt hour), and priced in £/mwh. £10/mwh is equivalent to 1p/kwh
+>>>>>>> main
 
