@@ -3,7 +3,7 @@ import numpy as np
 from datetime import datetime, timedelta
 
 MainData = pd.read_csv('data\output_dataframe.csv') 
-Carbon = pd.read_csv('data\carbon_intensity.csv') 
+Carbon = pd.read_csv('data\carbon_intensity_example_out.csv') 
 
 # display  
 print("Original 'output_dataframe.csv' CSV MainData: \n") 
@@ -37,5 +37,15 @@ CarbonIntensity = Carbon['CarbonIntensity']
 MainData['Carbon Intensity'] = CarbonIntensity
 
 MainData.to_csv('data\GrafanaData.csv', index=False)
-#2024-06-02
-#2024-07-01
+
+# Calculating Emissions Savings
+
+CarbonThreshold = 100
+carbon_filtered_rows = MainData[MainData['Carbon Intensity'] < CarbonThreshold].head(48)
+
+Carbon_filtered_sum = carbon_filtered_rows['Carbon Intensity'].sum()
+
+Carbon_First_48 = MainData['Carbon Intensity'].head(48).sum()                       
+
+print("Sum of Emissions for first 48 rows with Intensity < threshold:", Carbon_filtered_sum)
+print("Sum of Emissions for first 48 rows without threshold:", Carbon_First_48)
