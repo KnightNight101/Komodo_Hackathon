@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read the CSV file
-df = pd.read_csv('./agile-half-hour-actual-rates-02-06-2024_01-07-2024.csv', parse_dates=['Period from', 'Period to'], date_parser=lambda x: pd.to_datetime(x, format='%d/%m/%Y %H:%M'))
+df = pd.read_csv('../data/agile-half-hour-actual-rates-02-06-2024_01-07-2024.csv', parse_dates=['Period from', 'Period to'], date_parser=lambda x: pd.to_datetime(x, format='%d/%m/%Y %H:%M'))
 df['Price_moving_avg'] = df['Agile Import price (p/kWh)'].astype(float).rolling(window=100).mean()
 df['Asset_load'] = 1
 
@@ -53,11 +53,12 @@ for i in range(0, len(old_arr)-window_size, 10):
 df['New_asset_load'] = new_arr
 df['New_asset_load_rolling'] = df['New_asset_load'].rolling(window=100).mean()
 
-df.to_csv('output_dataframe.csv')
+df.to_csv('../data/output_dataframe.csv')
 
 ax2.plot(df.index, df['New_asset_load_rolling'], color='green')
 
 print(df[400:420])
 
 plt.show()
+plt.savefig('../img/load_shifting_data_centre.png')
 
